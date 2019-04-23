@@ -1,0 +1,7 @@
+﻿language:shell
+install:
+  - apt install curl
+
+after_script:
+  -sudo chmod -x runnable.sh
+  -sudo ./runnable.sh
