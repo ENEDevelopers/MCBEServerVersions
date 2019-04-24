@@ -17,7 +17,8 @@ if(version==null){
     console.log("filename:"+version);
     var winl   = winp+version;
     var linuxl = linuxp+version;
-
+    
+    fs.writeFileSync("MCBEServerVersions/LATEST.txt","*-"+version);
     
     fs.writeFileSync("getWinBin.sh","wget "+winl+" --output-document=./MCBEServerVersions/win-"+version);
     fs.writeFileSync("getLinuxBin.sh","wget "+linuxl+" --output-document=./MCBEServerVersions/linux-"+version);
