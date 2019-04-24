@@ -27,7 +27,6 @@ after_script:
     #deploy
   - chmod +x deploy.sh
   - ./deploy.sh > /dev/null
-  - "echo 'BUILD SUCCESSFUL'"
   
   
 branches:
