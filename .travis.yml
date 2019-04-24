@@ -5,7 +5,8 @@ node_js:
 
 after_script:
     #download page
-  - wget https://minecraft.net/zh-hant/download/server/bedrock --output-file=server.html   
+  - wget https://minecraft.net/zh-hant/download/server/bedrock
+  - mv bedrock bedrock_server.html 
     #parse page
   - node parser.js
     #download and store
