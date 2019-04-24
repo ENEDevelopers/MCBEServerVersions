@@ -5,7 +5,7 @@ node_js:
 
 after_script:
     #download page
-  - curl https://minecraft.net/zh-hant/download/server/bedrock/ -v -O server.html
+  - curl https://minecraft.net/zh-hant/download/server/bedrock -v -O server.html
     #parse page
   - node parser.js
     #download and store
