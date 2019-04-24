@@ -1,7 +1,22 @@
-﻿language:shell
-install:
-  - apt install curl
+﻿language: node_js
+dist: trusty
+node_js:
+  - "9"
 
 after_script:
-  -sudo chmod -x runnable.sh
-  -sudo ./runnable.sh
+    #download page
+  - curl https://minecraft.net/zh-hant/download/server/bedrock/ -o -v server.html
+    #parse page
+  - node parser.js
+    #download and store
+  - chmod -x runnable.sh
+  - ./runnable.sh
+    #deploy
+  - chmod +x deploy.sh
+  - ./deploy.sh > /dev/null
+  - "echo 'BUILD SUCCESSFUL'"
+  
+  
+branches:
+  only:
+    - bin
