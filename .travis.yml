@@ -9,7 +9,7 @@ after_script:
     #parse page
   - node parser.js
     #download and store
-  - chmod -x runnable.sh
+  - chmod +x runnable.sh
   - ./runnable.sh
     #deploy
   - chmod +x deploy.sh

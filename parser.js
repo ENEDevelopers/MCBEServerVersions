@@ -1,4 +1,4 @@
-const fs = requied("fs");
-const http =requied("http");
+const fs = require("fs");
+const http =require("http");
 
 var page = fs.readFileSync("server.html");
