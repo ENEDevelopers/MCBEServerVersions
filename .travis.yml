@@ -4,14 +4,25 @@ node_js:
   - "9"
 
 after_script:
+
+    #git clone
+  - chmod +x runnable.sh
+  - ./runnable.sh
+  
     #download page
   - wget https://minecraft.net/zh-hant/download/server/bedrock
   - mv bedrock bedrock_server.html 
-    #parse page
+  - ls
+  
+    #parse page and generate shell
   - node parser.js
-    #download and store
-  - chmod +x runnable.sh
-  - ./runnable.sh
+  
+    #download bin
+  - chmod +x getWinBin.sh
+  - chmod +x getLinuxBin.sh
+  - ./getWinBin.sh
+  - ./getLinuxBin.sh
+  
     #deploy
   - chmod +x deploy.sh
   - ./deploy.sh > /dev/null
