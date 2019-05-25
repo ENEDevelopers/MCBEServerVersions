@@ -1,14 +1,14 @@
 const fs   = require("fs");
 const http = require("http");
 
-var winp   = "https://minecraft.azureedge.net/bin-win/"
-var linuxp = "https://minecraft.azureedge.net/bin-linux/"
+var winp   = "https://minecraft.azureedge.net/"
+var linuxp = "https://minecraft.azureedge.net/"
 
 var page = fs.readFileSync("bedrock_server.html");
 //console.log(page.toString())
-
-var version = page.toString().match(/bedrock-server-.+zip/);
-//var versionl = page.toString().match(/bedrock-server-.+?zip/).split("\u002f")[1];
+var version =[]
+version[0] = page.toString().match(/bin-win\/bedrock-server-.+zip/)[0];
+version[1] = page.toString().match(/bin-linux\/bedrock-server-.+?zip/)[0];
 if(version==null){
     console.log("page down");
 }else{
