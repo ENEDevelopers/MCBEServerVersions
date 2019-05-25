@@ -18,10 +18,10 @@ if(version==null){
     var winl   = winp+version[0];
     var linuxl = linuxp+version[1];
     
-    fs.writeFileSync("MCBEServerVersions/LATEST.txt","win-"+version[0]+"\nlinux-"+version[1]);
+    fs.writeFileSync("MCBEServerVersions/LATEST.txt",""+version[0]+"\n"+version[1]);
     
-    fs.writeFileSync("getWinBin.sh","wget "+winl+" --output-document=./MCBEServerVersions/win-"+version);
-    fs.writeFileSync("getLinuxBin.sh","wget "+linuxl+" --output-document=./MCBEServerVersions/linux-"+version);
+    fs.writeFileSync("getWinBin.sh","wget "+winl+" --output-document=./MCBEServerVersions/"+version[0]);
+    fs.writeFileSync("getLinuxBin.sh","wget "+linuxl+" --output-document=./MCBEServerVersions/"+version);
 
 }
 
