@@ -21,7 +21,7 @@ if(version==null){
     fs.writeFileSync("MCBEServerVersions/LATEST.txt",""+version[0]+"\n"+version[1]);
     
     fs.writeFileSync("getWinBin.sh","wget "+winl+" --output-document=./MCBEServerVersions/"+version[0]);
-    fs.writeFileSync("getLinuxBin.sh","wget "+linuxl+" --output-document=./MCBEServerVersions/"+version);
+    fs.writeFileSync("getLinuxBin.sh","wget "+linuxl+" --output-document=./MCBEServerVersions/"+version[1]);
 
 }
 
