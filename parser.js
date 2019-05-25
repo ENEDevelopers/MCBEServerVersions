@@ -8,15 +8,15 @@ var page = fs.readFileSync("bedrock_server.html");
 //console.log(page.toString())
 
 var version = page.toString().match(/bedrock-server-.+?zip/);
-
+//var versionl = page.toString().match(/bedrock-server-.+?zip/).split("\u002f")[1];
 if(version==null){
     console.log("page down");
 }else{
     console.log("page loaded");
-    version=version[0];
-    console.log("filename:"+version);
-    var winl   = winp+version;
-    var linuxl = linuxp+version;
+    console.log("win-filename:"+version[0]);
+    console.log("linux-filename:"+version[1]);
+    var winl   = winp+version[0];
+    var linuxl = linuxp+version[1];
     
     fs.writeFileSync("MCBEServerVersions/LATEST.txt","*-"+version);
     
