@@ -1,2 +1,2 @@
-bin-win/bedrock-server-1.16.1.02.zip
+bin-win/bedrock-server-1.16.10.02.zip
 bin-linux/bedrock-server-1.16.1.02.zip
